@@ -1,1 +1,19 @@
-Something
+<div class="card weather-card">
+	<div class="card-body" *ngIf="show">
+		<h5 class="card-title">{{weather.name}}, {{weather.sys.country}}</h5>
+		<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+			content.</p>
+		<a href="#" class="card-link">Card link</a>
+		<a href="#" class="card-link">Another link</a>
+	</div>
+	<div class="card-body" *ngIf="!show">
+    {{name}}
+		<div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="City Name" aria-label="" aria-describedby="basic-addon1">
+      <div class="input-group-prepend">
+        <button id="city_btn" class="btn btn-primary" type="button" (click)="getWeather()">Get Weather</button>
+      </div>
+    </div>
+	</div>
+</div> 

@@ -6,11 +6,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { OpenweatherService } from "./openweather.service";
 import { WeatherCardComponent } from "./weather-card/weather-card.component";
- 
-@NgModule({ 
+
+@NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
-  declarations: [AppComponent, WeatherCardComponent], 
+  declarations: [AppComponent, WeatherCardComponent],
   bootstrap: [AppComponent],
-  providers: [HttpClientModule, OpenweatherService] 
-}) 
+  providers: [HttpClientModule, OpenweatherService]
+})
 export class AppModule {}

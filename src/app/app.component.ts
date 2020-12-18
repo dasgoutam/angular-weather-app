@@ -7,4 +7,6 @@ import { Component, VERSION } from "@angular/core";
 })
 export class AppComponent {
   name = "Angular " + VERSION.major;
+
+  cards = ["one", "two", "three", "one", "two", "three", "one", "two", "three"];
 }
