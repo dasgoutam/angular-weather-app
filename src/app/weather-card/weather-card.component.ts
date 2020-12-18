@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { OpenweatherService } from "../openweather.service";
 
 @Component({
-  selector: "app-weather-card",
+  selector: "app-weather-card", 
   templateUrl: "./weather-card.component.html",
   styleUrls: ["./weather-card.component.scss"]
 })
