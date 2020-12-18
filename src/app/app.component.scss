@@ -1,0 +1,49 @@
+$blue: #ddedff;
+$dark-blue: #0087ff;
+
+$yellow: #fef0b2;
+$dark-yellow: #ffbd00;
+
+$pink: #fad2e1;
+$dark-pink: #f84f7f;
+
+$purple: #dfccff;
+$dark-purple: #7f51f4;
+
+@mixin color-panel($color1, $color2) {
+  border: 1px solid $color2;
+  background-color: $color1;
+  color: $color2;
+}
+
+body {
+  margin: 4rem 0;
+  // background: #333 !important;
+}
+
+h4 {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.panel {
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  &.panel-blue {
+    @include color-panel($blue, $dark-blue);
+  }
+
+  &.panel-yellow {
+    @include color-panel($yellow, $dark-yellow);
+  }
+
+  &.panel-pink {
+    @include color-panel($pink, $dark-pink);
+  }
+
+  &.panel-purple {
+    @include color-panel($purple, $dark-purple);
+  }
+}
