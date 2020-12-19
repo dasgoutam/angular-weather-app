@@ -43,3 +43,17 @@
   // -o-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Opera 12+ */
   // animation: NAME-YOUR-ANIMATION 1s infinite;  /* IE 10+, Fx 29+ */
 }
+
+.tempdetails {
+  font-size: 14px;
+}
+
+@media (min-width: 992px) {
+  .tempdetails {
+    font-size: 10px;
+  }
+}
+
+.card-bottom {
+  padding-top: 10px;
+}

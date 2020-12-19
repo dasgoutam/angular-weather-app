@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { OpenweatherService } from "../openweather.service";
 import { interval, Observable } from "rxjs";
 import { mergeMap, startWith } from "rxjs/operators";
@@ -9,7 +9,7 @@ import { timer } from "rxjs";
   templateUrl: "./weather-card.component.html",
   styleUrls: ["./weather-card.component.scss"]
 })
-export class WeatherCardComponent implements OnInit {
+export class WeatherCardComponent implements OnInit, OnDestroy {
   constructor(private weatherService: OpenweatherService) {}
   @Input() name: any;
 
@@ -17,13 +17,12 @@ export class WeatherCardComponent implements OnInit {
   weather_today;
   show = false;
   notfound;
+  subscription;
 
-  ngOnInit() {
-    // this.weatherService.getWeatherDetails("mumbai").subscribe(data => {
-    //   this.weather = data;
-    //   this.weather_today = this.weather.weather[0].description;
-    //   console.log(this.weather_today);
-    // });
+  ngOnInit() {}
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   getWeather() {
@@ -32,7 +31,7 @@ export class WeatherCardComponent implements OnInit {
       .value;
     console.log(city_name);
 
-    timer(0, 30 * 1000)
+    this.subscription = timer(0, 30 * 1000)
       .pipe(mergeMap(() => this.weatherService.getWeatherDetails(city_name)))
       .subscribe(
         data => {
@@ -41,12 +40,11 @@ export class WeatherCardComponent implements OnInit {
           this.show = true;
           console.log(this.weather_today);
         },
-        (error) => {
-          if (error.error.message == 'city not found')
-          this.notfound = true;
+        error => {
+          if (error.error.message == "city not found") this.notfound = true;
           console.log(error);
+          this.subscription.unsubscribe();
         }
       );
-
   }
 }
