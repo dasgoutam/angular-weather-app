@@ -12,6 +12,7 @@
     "@angular/platform-browser-dynamic": "^11.0.5",
     "@angular/pwa": "^0.1100.5",
     "@angular/router": "^11.0.5",
+    "@angular/service-worker": "^11.0.5",
     "angular-particle": "^1.0.4",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
