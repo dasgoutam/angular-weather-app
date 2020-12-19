@@ -17,6 +17,29 @@
   font-size: 12px;
 }
 
+.card-body {
+  text-align: center;
+  display: inline;
+}
+
 .col-centered {
-    text-align: center;
+  text-align: center;
+}
+.inpcity {
+  margin: 0 auto;
+}
+.getbtn {
+  margin: 0 auto;
+}
+
+.message {
+  display: inherit;
+}
+.card-error {
+  background-color: #ef9a9a;
+  color: #fff;
+  // -webkit-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Safari 4+ */
+  // -moz-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Fx 5+ */
+  // -o-animation: NAME-YOUR-ANIMATION 1s infinite;  /* Opera 12+ */
+  // animation: NAME-YOUR-ANIMATION 1s infinite;  /* IE 10+, Fx 29+ */
 }

@@ -1,5 +1,4 @@
 import { Component, VERSION, OnInit } from "@angular/core";
-declare var particlesJS: any;
 
 @Component({
   selector: "my-app",
@@ -11,7 +10,5 @@ export class AppComponent {
 
   cards = ["one", "two", "three", "one", "two", "three", "one", "two", "three"];
 
-  ngOnInit() {
-    particlesJS.load("particles-js", "particles.json", null);
-  }
+  ngOnInit() {}
 }

@@ -1,4 +1,4 @@
-<div class="card weather-card" style="background: #fafafa">
+<div class="card weather-card" style="background: #feffff">
 	<div class="card-body" *ngIf="show">
 		<h5 class="card-title">{{weather.name}}, {{weather.sys.country}}</h5>
 		<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -7,13 +7,22 @@
 		<a href="#" class="card-link">Card link</a>
 		<a href="#" class="card-link">Another link</a>
 	</div>
-	<div class="card-body" *ngIf="!show">
-		<span *ngIf="notfound">City not Found</span>
-		<!-- <div class="input-group mb-3">
-			<input [attr.id]="'city_' + name" type="text" class="form-control" placeholder="City Name" aria-label="" aria-describedby="basic-addon1">
-			<div class="input-group-prepend">
+	<div class="card-body" *ngIf="!show && !notfound">
+		<span class="text-muted mb-3 message">Activate Panel by searching for a City</span>
+		<div class="input-group input-group-sm mb-3 mt-3" style="text-align: center; display: inline">
+			<input [attr.id]="'city_' + name" type="text" placeholder="" class="inpcity mb-3" aria-label="" aria-describedby="basic-addon1">
+			<div class="getbtn">
 				<button id="city_btn" class="btn btn-primary" type="button" (click)="getWeather()">Get Weather</button>
 			</div>
-		</div> -->
+		</div>
+	</div>
+	<div class="card-body card-error" *ngIf="!show && notfound">
+		<span class="mb-3 message">Oops City not Found. Try Again</span>
+		<div class="input-group input-group-sm mb-3 mt-3" style="text-align: center">
+			<input [attr.id]="'city_' + name" type="text" placeholder="" class="inpcity mb-3" aria-label="" aria-describedby="basic-addon1">
+			<div class="getbtn">
+				<button id="city_btn" class="btn btn-secondary" type="button" (click)="getWeather()">Get Weather</button>
+			</div>
+		</div>
 	</div>
 </div>

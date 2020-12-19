@@ -1,43 +1,12 @@
-<!-- <nav class="navbar navbar-dark bg-dark mb-4">
-	<span class="navbar-brand mb-0 h1"> Weather App</span>
-</nav> -->
+<div class="container-md overflo-auto">
 
-<div class="container-fluid">
-	<h5 class="text-muted mt-3 mb-5">Angular | Weather App</h5>
+	<h5 class="mt-4 ml-2 mb-4" style="color: #000;">Weather App
+		<span class="text-muted" style="float: right">ANGULAR</span></h5>
+
 	<div class="row justify-content-md-center">
-		<!-- <div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div>
-		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2">
-			<app-weather-card></app-weather-card>
-		</div> -->
 		<div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2" *ngFor="let cards of [].constructor(9); let i = index">
-			<!-- <div class="col-xl-3 col-lg-4 col-md-6 mt-2 mb-2" *ngFor="let card of cards; let i = index"> -->
 			<app-weather-card [name]="i"></app-weather-card>
 		</div>
-
 	</div>
+
 </div>

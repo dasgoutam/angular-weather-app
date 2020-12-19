@@ -1,9 +1,12 @@
 /* Add application styles & imports to this file! */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 
 html,
 body {
   height: 100%;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
+  overflow-y: auto;
+  // background-image: linear-gradient(45deg, #c2dde6, #c2dde6 50%, #bccbde 50%);
+  background-image: linear-gradient(45deg, #feffff, #feffff 60%, #98dafc 50%);
 }
