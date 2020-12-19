@@ -18,6 +18,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   show = false;
   notfound;
   subscription;
+  src;
 
   ngOnInit() {}
 
@@ -27,6 +28,8 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
 
   getWeather() {
     let target_id = `city_${this.name}`;
+    let target_icon = `icon_${this.name}`;
+    console.log(target_icon);
     let city_name = (<HTMLInputElement>document.getElementById(target_id))
       .value;
     console.log(city_name);
@@ -35,9 +38,17 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
       .pipe(mergeMap(() => this.weatherService.getWeatherDetails(city_name)))
       .subscribe(
         data => {
+          this.show = true;
           this.weather = data;
           this.weather_today = this.weather.weather[0].description;
-          this.show = true;
+          // (<HTMLInputElement>(
+          //   document.getElementById(target_icon)
+          // )).src = `https://openweathermap.org/img/wn/${
+          //   this.weather.weather.icon
+          // }@2x.png`;
+          this.src = `https://openweathermap.org/img/wn/${
+            this.weather.weather.icon
+          }@2x.png`;
           console.log(this.weather_today);
         },
         error => {
