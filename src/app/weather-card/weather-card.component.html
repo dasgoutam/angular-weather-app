@@ -1,5 +1,8 @@
 <div class="card weather-card" style="background: #feffff">
 	<div class="card-body" *ngIf="show"><span class="wicon"><img [src]="src" [attr.id]="'icon_' + name"></span>
+		<button type="button" class="close" aria-label="Close" (click)="close_card()">
+      <span aria-hidden="true">&times;</span>
+    </button>
 		<h5 class="card-title">{{weather.name}}, {{weather.sys.country}}</h5>
 		<div>
 			<h4>{{weather.main.temp - 273.15 | number}}&deg;C</h4>

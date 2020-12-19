@@ -26,6 +26,12 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  close_card() {
+    this.show = false;
+    this.notfound = false;
+    this.subscription.unsubscribe();
+  }
+
   getWeather() {
     let target_id = `city_${this.name}`;
     let target_icon = `icon_${this.name}`;
