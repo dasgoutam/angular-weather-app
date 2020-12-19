@@ -32,7 +32,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
     console.log(target_icon);
     let city_name = (<HTMLInputElement>document.getElementById(target_id))
       .value;
-    console.log(city_name);
+    // console.log(city_name);
 
     this.subscription = timer(0, 30 * 1000)
       .pipe(mergeMap(() => this.weatherService.getWeatherDetails(city_name)))
@@ -46,9 +46,10 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
           // )).src = `https://openweathermap.org/img/wn/${
           //   this.weather.weather.icon
           // }@2x.png`;
+          console.log(this.weather.weather.icon);
           this.src = `https://openweathermap.org/img/wn/${
-            this.weather.weather.icon
-          }@2x.png`;
+            this.weather.weather[0].icon
+          }.png`;
           console.log(this.weather_today);
         },
         error => {
