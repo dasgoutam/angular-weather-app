@@ -35,7 +35,7 @@
 	</div>
 	<div class="card-body card-error" *ngIf="!show && notfound">
 		<span class="mb-3 message">Oops City not Found. Try Again</span>
-		<div class="input-group input-group-sm mb-3 mt-3" style="text-align: center">
+		<div class="input-group input-group-sm mb-3 mt-3" style="text-align: center; display: inline">
 			<input [attr.id]="'city_' + name" type="text" placeholder="" class="inpcity mb-3" aria-label="" aria-describedby="basic-addon1">
 			<div class="getbtn">
 				<button id="city_btn" class="btn btn-secondary" type="button" (click)="getWeather()">Get Weather</button>

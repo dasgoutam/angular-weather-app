@@ -1,12 +1,20 @@
 <div class="container-md overflo-auto">
+  <h5 class="mt-4 ml-2 mb-4 title" style="color: #000;">
+    Weather App
+    <span class="online ml-2" *ngIf="!isOfflineMode">online</span>
+    <span class="offline ml-2" *ngIf="isOfflineMode">offline</span>
+    <span class="text-muted" style="float: right">ANGULAR</span>
+  </h5>
 
-	<h5 class="mt-4 ml-2 mb-4" style="color: #000;">Weather App
-		<span class="text-muted" style="float: right">ANGULAR</span></h5>
-
-	<div class="row justify-content-md-center">
-		<div class="col-xl-3 col-lg-4 col-sm-6 mt-2 mb-2" *ngFor="let cards of [].constructor(9); let i = index">
-			<app-weather-card [name]="i"></app-weather-card>
-		</div>
-	</div>
-
+  <div class="row justify-content-md-center">
+    <div
+      class="col-xl-3 col-lg-4 col-sm-6 mt-2 mb-2"
+      *ngFor="let cards of [].constructor(9); let i = index"
+    >
+      <app-weather-card
+        [name]="i"
+        [isoffline]="isOfflineMode"
+      ></app-weather-card>
+    </div>
+  </div>
 </div>
