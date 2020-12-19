@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { OpenweatherService } from "../openweather.service";
+import { interval, Observable } from 'rxjs';
+import { mergeMap, startWith } from 'rxjs/operators';
+import {timer} from 'rxjs'
 
 @Component({
   selector: "app-weather-card",
@@ -9,9 +12,10 @@ import { OpenweatherService } from "../openweather.service";
 export class WeatherCardComponent implements OnInit {
   constructor(private weatherService: OpenweatherService) {}
 
-  weather;
+  weather:any;
   weather_today;
   show = false;
+  notfound;
   @Input() name: any;
 
   ngOnInit() {
@@ -23,15 +27,30 @@ export class WeatherCardComponent implements OnInit {
   }
 
   getWeather() {
-    console.log(this.name);
-    // let city_name = (<HTMLInputElement>document.getElementById("city_name"))
-    //   .value;
-    // console.log(city_name);
+    let target_id = `city_${this.name}`
+    let city_name = (<HTMLInputElement>document.getElementById(target_id))
+      .value;
+    console.log(city_name);
+
+    timer(0, 30*1000)
+    .pipe(
+        mergeMap(() => this.weatherService.getWeatherDetails(city_name))
+    ).subscribe(data => {
+      this.weather = data;
+      this.weather_today = this.weather.weather[0].description;
+      this.show = true;
+      console.log(this.weather_today);
+    }, (error) => {
+      this.notfound= true;
+    });
+
     // this.weatherService.getWeatherDetails(city_name).subscribe(data => {
     //   this.weather = data;
     //   this.weather_today = this.weather.weather[0].description;
     //   this.show = true;
-      // console.log(this.weather_today);
+    //   console.log(this.weather_today);
+    // }, (error) => {
+    //   this.notfound= true;
     // });
   }
 }
