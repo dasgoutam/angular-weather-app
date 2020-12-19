@@ -1,4 +1,5 @@
-import { Component, VERSION } from "@angular/core";
+import { Component, VERSION, OnInit } from "@angular/core";
+declare var particlesJS: any;
 
 @Component({
   selector: "my-app",
@@ -9,4 +10,8 @@ export class AppComponent {
   name = "Angular " + VERSION.major;
 
   cards = ["one", "two", "three", "one", "two", "three", "one", "two", "three"];
+
+  ngOnInit() {
+    particlesJS.load("particles-js", "particles.json", null);
+  }
 }

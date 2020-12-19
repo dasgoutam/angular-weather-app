@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { OpenweatherService } from "../openweather.service";
 import { interval, Observable } from 'rxjs';
 import { mergeMap, startWith } from 'rxjs/operators';
-import {timer} from 'rxjs'
+import {timer} from 'rxjs';
 
 @Component({
   selector: "app-weather-card",

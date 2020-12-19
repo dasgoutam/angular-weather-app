@@ -1,4 +1,4 @@
-<div class="card weather-card" style="background: #FFFFFF; border: 1px solid #444">
+<div class="card weather-card" style="background: #fafafa">
 	<div class="card-body" *ngIf="show">
 		<h5 class="card-title">{{weather.name}}, {{weather.sys.country}}</h5>
 		<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -8,12 +8,12 @@
 		<a href="#" class="card-link">Another link</a>
 	</div>
 	<div class="card-body" *ngIf="!show">
-    <span *ngIf="notfound">City not Found</span>
-		<div class="input-group mb-3">
-      <input [attr.id]="'city_' + name" type="text" class="form-control" placeholder="City Name" aria-label="" aria-describedby="basic-addon1">
-      <div class="input-group-prepend">
-        <button id="city_btn" class="btn btn-primary" type="button" (click)="getWeather()">Get Weather</button>
-      </div>
-    </div>
+		<span *ngIf="notfound">City not Found</span>
+		<!-- <div class="input-group mb-3">
+			<input [attr.id]="'city_' + name" type="text" class="form-control" placeholder="City Name" aria-label="" aria-describedby="basic-addon1">
+			<div class="input-group-prepend">
+				<button id="city_btn" class="btn btn-primary" type="button" (click)="getWeather()">Get Weather</button>
+			</div>
+		</div> -->
 	</div>
-</div> 
+</div>
