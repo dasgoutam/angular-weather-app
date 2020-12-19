@@ -21,6 +21,21 @@ body {
   // background: #333 !important;
 }
 
+.title {
+  font-family: "Raleway", sans-serif;
+}
+
+.online {
+  font-size: 13px;
+  font-weight: 400;
+  color: hsl(93, 100%, 26%);
+}
+
+.offline {
+  font-size: 13px;
+  color: hsl(9, 100%, 43%);
+}
+
 h4 {
   margin-bottom: 2rem;
   margin-top: 3rem;
